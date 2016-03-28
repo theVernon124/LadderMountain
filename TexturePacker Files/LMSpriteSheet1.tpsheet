@@ -1,0 +1,38 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:e77bb05cca93ff1084747c927f964058:2bb8fe620ddcf5d369dbdd704a98031b:9736b726a63961e0a6ace104260689d6$
+#
+:format=40000
+:texture=LMSpriteSheet1.png
+:size=256x256
+
+CliffGrassyLeft;0;224;32;32;0.5;0.5
+CliffGrassyMid1;32;224;32;32;0.5;0.5
+CliffGrassyMid2;64;224;32;32;0.5;0.5
+CliffGrassyMid3;96;224;32;32;0.5;0.5
+CliffGrassyRight;128;224;32;32;0.5;0.5
+CliffGrassySolo;160;224;32;32;0.5;0.5
+HeroIdle1;192;224;32;32;0.5;0.5
+HeroIdle2;224;224;32;32;0.5;0.5
+HeroIdle3;0;192;32;32;0.5;0.5
+HeroIdle4;32;192;32;32;0.5;0.5
+HeroIdle5;64;192;32;32;0.5;0.5
+HeroIdle6;96;192;32;32;0.5;0.5
+HeroJump1;128;192;32;32;0.5;0.5
+HeroJump2;160;192;32;32;0.5;0.5
+HeroJump3;192;192;32;32;0.5;0.5
+HeroWalk1;224;192;32;32;0.5;0.5
+HeroWalk2;0;160;32;32;0.5;0.5
+Ladder1;32;160;32;32;0.5;0.5
+Ladder2;64;160;32;32;0.5;0.5
+MountainLeft1;96;160;32;32;0.5;0.5
+MountainLeft2;128;160;32;32;0.5;0.5
+MountainMid1;160;160;32;32;0.5;0.5
+MountainMid2;192;160;32;32;0.5;0.5
+MountainMid3;224;160;32;32;0.5;0.5
+MountainRight1;0;128;32;32;0.5;0.5
+MountainRight2;32;128;32;32;0.5;0.5

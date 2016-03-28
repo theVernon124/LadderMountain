@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{F92517CF-2D1B-E6FD-CA65-4BC25C0B7549}") = "Ladder Mountain", "Assembly-CSharp.csproj", "{DF4C6513-7AD7-AFD4-0924-1163965D83B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF4C6513-7AD7-AFD4-0924-1163965D83B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF4C6513-7AD7-AFD4-0924-1163965D83B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF4C6513-7AD7-AFD4-0924-1163965D83B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF4C6513-7AD7-AFD4-0924-1163965D83B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
