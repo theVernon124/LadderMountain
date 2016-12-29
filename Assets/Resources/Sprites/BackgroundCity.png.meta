@@ -1,0 +1,114 @@
+fileFormatVersion: 2
+guid: 5dd5a4110200e480088fab8e9f1d51ca
+timeCreated: 1459650679
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BackgroundCity_0
+    21300002: BackgroundCity_1
+    21300004: BackgroundCity_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BackgroundCity_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 100
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85, y: 31}
+        - {x: 9, y: 31}
+        - {x: 0, y: 26}
+        - {x: 0, y: 0}
+        - {x: 96, y: 0}
+        - {x: 96, y: 23}
+        - {x: 94, y: 25}
+    - name: BackgroundCity_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 100
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 82, y: 97}
+        - {x: 49, y: 97}
+        - {x: 0, y: 82}
+        - {x: 0, y: 0}
+        - {x: 96, y: 0}
+        - {x: 96, y: 52}
+        - {x: 86, y: 96}
+    - name: BackgroundCity_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 100
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 82, y: 97}
+        - {x: 49, y: 97}
+        - {x: 0, y: 82}
+        - {x: 0, y: 17}
+        - {x: 96, y: 17}
+        - {x: 96, y: 52}
+        - {x: 86, y: 96}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

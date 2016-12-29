@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
 	public static GameManager instance = null;
 	public BoardManager boardScript;
 	[HideInInspector] public bool playersTurn;
+	[HideInInspector] public bool bgIsVisible;
+	[HideInInspector] public bool canSpawnAirplanes;
+	[HideInInspector] public bool sunIsVisible;
+	[HideInInspector] public bool starfieldIsVisible;
+	[HideInInspector] public bool disableCloudsAndPlanes;
 
 	private bool delayOccuring;
 
@@ -24,6 +29,11 @@ public class GameManager : MonoBehaviour
 		boardScript = GetComponent<BoardManager> ();
 		InitGame ();
 		playersTurn = true;
+		bgIsVisible = true;
+		canSpawnAirplanes = false;
+		sunIsVisible = false;
+		starfieldIsVisible = false;
+		disableCloudsAndPlanes = false;
 	}
 
 	void InitGame ()

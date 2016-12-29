@@ -12,12 +12,19 @@ public class Player : MovingObject
 	public Camera cam;
 	public Text scoreText;
 	public Text GameOverText;
+	public GameObject bgRight;
+	public GameObject bgLeft;
+	public Sun sun;
+	public Starfield sField1, sField2;
 
 	private int highestY;
 	private int score;
 	private bool isGameOver;
 	private bool gameStarted;
 	private CameraScroller camScroller;
+	private BackgroundScroller bgRightScroller;
+	private BackgroundScroller bgLeftScroller;
+
 	private Vector2 touchOrigin = -Vector2.one;
 	//Used to store location of screen touch origin for mobile controls.
 
@@ -26,6 +33,8 @@ public class Player : MovingObject
 	{
 		base.Start ();
 		camScroller = cam.GetComponent<CameraScroller> ();
+		bgRightScroller = bgRight.GetComponent<BackgroundScroller> ();
+		bgLeftScroller = bgLeft.GetComponent<BackgroundScroller> ();
 		playerRb2d = GetComponent<Rigidbody2D> ();
 		highestY = (int)transform.position.y;
 		score = 0;
@@ -37,9 +46,20 @@ public class Player : MovingObject
 	void Update ()
 	{
 		if (transform.position.y == highestY + 3) {
-			score += 2;
+			score++;
 			highestY = (int)transform.position.y;
 			scoreText.text = "Score: " + score;
+		}
+
+		if (score >= 50 && !GameManager.instance.canSpawnAirplanes) {
+			GameManager.instance.canSpawnAirplanes = true;
+		}
+		if (score >= 75 && !GameManager.instance.sunIsVisible) {
+			GameManager.instance.sunIsVisible = true;
+		}
+		if (score >= 100) {
+			GameManager.instance.disableCloudsAndPlanes = true;
+			GameManager.instance.starfieldIsVisible = true;
 		}
 
 		Vector3 viewPos = cam.WorldToViewportPoint (this.gameObject.transform.position);
@@ -49,16 +69,32 @@ public class Player : MovingObject
 				gameStarted = false;
 			} else if (viewPosFull.y < 0f) {
 				camScroller.setScrollSpeed (0f);
+				bgLeftScroller.setScrollSpeed (0f);
+				bgRightScroller.setScrollSpeed (0f);
 				GameOverText.gameObject.SetActive (true);
 				isGameOver = true;
 			}
 		} else if (viewPos.y <= 0.5f && viewPos.y >= 0) {
 			camScroller.setScrollSpeed (0.75f);
+			sun.setScrollSpeed (0.65f);
+			sField1.setScrollSpeed (0.65f);
+			sField2.setScrollSpeed (0.65f);
+			bgLeftScroller.setScrollSpeed (0.65f);
+			bgRightScroller.setScrollSpeed (0.65f);
 		} else if (viewPos.y > 0.5f) {
 			camScroller.setScrollSpeed (1.75f);
+			sun.setScrollSpeed (1.65f);
+			sField1.setScrollSpeed (1.65f);
+			sField2.setScrollSpeed (1.65f);
+			bgLeftScroller.setScrollSpeed (1.65f);
+			bgRightScroller.setScrollSpeed (1.65f);
 		} else if (viewPosFull.y < 0f) {
-//			Time.timeScale = 0f;
 			camScroller.setScrollSpeed (0f);
+			sun.setScrollSpeed (0f);
+			sField1.setScrollSpeed (0f);
+			sField2.setScrollSpeed (0f);
+			bgLeftScroller.setScrollSpeed (0f);
+			bgRightScroller.setScrollSpeed (0f);
 			GameOverText.gameObject.SetActive (true);
 			isGameOver = true;
 		}

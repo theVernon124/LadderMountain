@@ -31,6 +31,8 @@ public class BoardManager : MonoBehaviour
 	public GameObject[] mountainTilesLeft;
 	public GameObject[] mountainTilesRight;
 	public GameObject[]	ladderTiles;
+	public GameObject[]	clouds;
+	public GameObject[]	airplanes;
 	public Sprite[]	cliffSprites;
 	public GameObject mainBoardHolder;
 	public GameObject subBoardHolder;
@@ -61,18 +63,36 @@ public class BoardManager : MonoBehaviour
 
 		//	4 initial cliff rows are spawned here, each with their own ladder rows. Each element in a cliff/ladder row is initially active.
 		GameObject cliffRow1 = Instantiate (Resources.Load ("Prefabs/CliffRow", typeof(GameObject)), new Vector3 (0, 0, 0f), Quaternion.identity) as GameObject;
+		GameObject cloudObject = clouds [0];
+		GameObject cloudObjectInstance = Instantiate (cloudObject, new Vector3 (cliffRow1.transform.position.x + 9, cliffRow1.transform.position.y, 0f), Quaternion.identity) as GameObject;
+		cloudObjectInstance.transform.SetParent (cliffRow1.transform);
+		GameObject airplaneObject = airplanes [0];
+		GameObject airplaneObjectInstance = Instantiate (airplaneObject, new Vector3 (cliffRow1.transform.position.x + 9, cliffRow1.transform.position.y, 0f), Quaternion.identity) as GameObject;
+		airplaneObjectInstance.transform.SetParent (cliffRow1.transform);
 		GameObject ladderRow1 = Instantiate (Resources.Load ("Prefabs/LadderRow", typeof(GameObject)), new Vector3 (0, cliffRow1.transform.position.y + 1, 0f), Quaternion.identity) as GameObject;
 		ladderRow1.transform.SetParent (cliffRow1.transform);
 
 		GameObject cliffRow2 = Instantiate (Resources.Load ("Prefabs/CliffRow", typeof(GameObject)), new Vector3 (0, cliffRow1.transform.position.y + cliffRowOffset, 0f), Quaternion.identity) as GameObject;
+		cloudObject = clouds [1];
+		cloudObjectInstance = Instantiate (cloudObject, new Vector3 (cliffRow2.transform.position.x - 3, cliffRow2.transform.position.y, 0f), Quaternion.identity) as GameObject;
+		cloudObjectInstance.transform.SetParent (cliffRow2.transform);
 		GameObject ladderRow2 = Instantiate (Resources.Load ("Prefabs/LadderRow", typeof(GameObject)), new Vector3 (0, cliffRow2.transform.position.y + 1, 0f), Quaternion.identity) as GameObject;
 		ladderRow2.transform.SetParent (cliffRow2.transform);
 
 		GameObject cliffRow3 = Instantiate (Resources.Load ("Prefabs/CliffRow", typeof(GameObject)), new Vector3 (0, cliffRow2.transform.position.y + cliffRowOffset, 0f), Quaternion.identity) as GameObject;
+		cloudObject = clouds [2];
+		cloudObjectInstance = Instantiate (cloudObject, new Vector3 (cliffRow3.transform.position.x + 8, cliffRow3.transform.position.y, 0f), Quaternion.identity) as GameObject;
+		cloudObjectInstance.transform.SetParent (cliffRow3.transform);
+		airplaneObject = airplanes [1];
+		airplaneObjectInstance = Instantiate (airplaneObject, new Vector3 (cliffRow3.transform.position.x - 3, cliffRow3.transform.position.y, 0f), Quaternion.identity) as GameObject;
+		airplaneObjectInstance.transform.SetParent (cliffRow3.transform);
 		GameObject ladderRow3 = Instantiate (Resources.Load ("Prefabs/LadderRow", typeof(GameObject)), new Vector3 (0, cliffRow3.transform.position.y + 1, 0f), Quaternion.identity) as GameObject;
 		ladderRow3.transform.SetParent (cliffRow3.transform);
 
 		GameObject cliffRow4 = Instantiate (Resources.Load ("Prefabs/CliffRow", typeof(GameObject)), new Vector3 (0, cliffRow3.transform.position.y + cliffRowOffset, 0f), Quaternion.identity) as GameObject;
+		cloudObject = clouds [3];
+		cloudObjectInstance = Instantiate (cloudObject, new Vector3 (cliffRow4.transform.position.x - 2, cliffRow4.transform.position.y, 0f), Quaternion.identity) as GameObject;
+		cloudObjectInstance.transform.SetParent (cliffRow4.transform);
 		GameObject ladderRow4 = Instantiate (Resources.Load ("Prefabs/LadderRow", typeof(GameObject)), new Vector3 (0, cliffRow4.transform.position.y + 1, 0f), Quaternion.identity) as GameObject;
 		ladderRow4.transform.SetParent (cliffRow4.transform);
 
@@ -127,6 +147,7 @@ public class BoardManager : MonoBehaviour
 			}
 		}
 
+
 		happyPathSeed = -1;
 		happyPathIndex = -1;
 		InitialLadderRow (ladderRow1);
@@ -159,7 +180,7 @@ public class BoardManager : MonoBehaviour
 		Transform cliffRowTransform = cliffRow.transform;
 
 		foreach (Transform child in cliffRowTransform) {
-			if (!child.gameObject.CompareTag ("LadderRow")) {
+			if (child.gameObject.CompareTag("Cliff")) {
 				cliffTilePositions.Add (child.gameObject);
 				child.gameObject.SetActive (true);
 				child.gameObject.GetComponent<SpriteRenderer> ().sprite = cliffSprites [Random.Range (1, 4)];

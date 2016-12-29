@@ -5,7 +5,7 @@ public class ScrollableObject : MonoBehaviour
 {
 	[HideInInspector]public Rigidbody2D rb2d;
 
-	private float scrollSpeed = 0f;
+	private float scrollSpeed = .25f;
 	private Vector2 targetPosition;
 	private float targetPosY;
 
@@ -13,6 +13,7 @@ public class ScrollableObject : MonoBehaviour
 	protected void Start ()
 	{
 		rb2d = GetComponent<Rigidbody2D> ();
+		targetPosY = -12f;
 		targetPosition = new Vector3 (rb2d.position.x, targetPosY);
 	}
 	
